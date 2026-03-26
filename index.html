@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">	
+    <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 櫻花季日本精選伴手禮訂購</title>
+    <!-- 分頁 Logo (Favicon) -->
+    <link rel="icon" type="image/png" href="https://github.com/manmangoshop/photo/blob/main/Webpage-Logo.png?raw=true">
+    <title>満満菓-日本精選伴手禮訂購</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
     <!-- Tailwind CSS -->
@@ -149,18 +151,36 @@
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="bg-wagashi text-white text-center py-10 px-4 relative overflow-hidden">
+ <!-- Header / Banner 區塊 -->
+    <header class="bg-wagashi text-white text-center py-12 px-4 relative overflow-hidden">
+        <!-- 背景紋理 -->
         <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/japanese-sayagata.png');"></div>
+        
         <div class="relative z-10 max-w-2xl mx-auto">
-            <p class="text-gold text-x tracking-[0.4em] mb-2 font-serif">踏春尋櫻 • 遇見美好 </p>
-            <h1 class="text-3xl font-black font-serif tracking-widest mb-2 text-white">満満菓-日本伴手禮</h1>
-            <div class="inline-block bg-white/10 backdrop-blur px-4 py-1 rounded-full text-[12px] font-bold tracking-widest">
-                🔥 現貨熱賣中 🔥
+            <p class="text-gold text-xs md:text-sm tracking-[0.5em] mb-6 font-serif opacity-90">踏春尋櫻 • 遇見美好</p>
+            
+            <!-- Logo 與 標題組合容器 -->
+            <div class="flex flex-row items-center justify-center gap-4 mb-8">
+                <!-- Logo 圖片 -->
+                <img src="https://github.com/manmangoshop/photo/blob/main/MANMANGO-LOGO2.png?raw=true" 
+                     alt="満満菓 LOGO" 
+                     class="h-14 md:h-18 w-auto drop-shadow-lg filter brightness-110">
+                
+                <!-- 裝飾分隔線 -->
+                <div class="h-8 w-[1px] bg-white/30 mx-1 hidden xs:block"></div>
+                
+                <!-- 主標題 -->
+                <h1 class="text-2xl md:text-4xl font-black font-serif tracking-[0.2em] text-white drop-shadow-md whitespace-nowrap">
+                    春季品牌聯慶
+                </h1>
+            </div>
+
+            <!-- 活動標籤 -->
+            <div class="inline-block bg-white/15 backdrop-blur-md border border-white/20 px-6 py-1.5 rounded-full text-[12px] font-bold tracking-[0.3em] uppercase">
+                🌸 日本禮盒 現貨熱賣 🌸
             </div>
         </div>
     </header>
-
     <main class="max-w-2xl mx-auto px-4 py-8">
         <!-- 狀態顯示區 -->
         <div id="loading-spinner" class="text-center py-10 text-gray-400 font-bold">
@@ -321,49 +341,57 @@
         const promoBrands = ["Sabrina-薫るバタ", "God Bless Butter", "N.Y.C. SAND", "Brulee Merize",];
 
         const productsData = [
-            { brand: "God Bless Butter", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/God%20Bless%20Butter.png?raw=true", items: [
+            { brand: "God Bless Butter", image: "https://github.com/manmangoshop/photo/blob/main/GodBlessButter.png?raw=true", items: [
                 { id: "GB1", name: "奶油白巧克力捲心酥-10入", price: 490, life: "約30天" },
                 { id: "GB2", name: "奶油白巧克力捲心酥-18入", price: 780, life: "約30天" },
                 { id: "GB3", name: "奶油白巧克力捲心酥-25入", price: 1050, life: "約30天" }
             ]},
-            { brand: "Sabrina-薫るバタ", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/Sabrina1.png?raw=true", items: [
+            { brand: "Sabrina-薫るバタ", image: "https://github.com/manmangoshop/photo/blob/main/Sabrina.png?raw=true", items: [
                 { id: "SAB1", name: "花朵千層酥-6入紙盒", price: 500, life: "約30天" },
                 { id: "SAB2", name: "花朵千層酥-8入經濟包", price: 580, life: "約30天" }
             ]},
-            { brand: "小倉山莊", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/ogurasansou1.png?raw=true", items: [
+            { brand: "N.Y.C. SAND", image: "https://github.com/manmangoshop/photo/blob/main/NYCSAND.png?raw=true", items: [
+                { id: "NYCS1", name: "原味焦糖巧克力夾心-4入", price: 350, life: "約7天" },
+                { id: "NYCS2", name: "原味焦糖巧克力夾心-8入", price: 620, life: "約7天" },
+                { id: "NYCS3", name: "原味焦糖巧克力夾心-12入", price: 880, life: "約7天" }
+            ]},
+            { brand: "Brulee Merize", image: "https://github.com/manmangoshop/photo/blob/main/BruleeMerize.png?raw=true", items: [
+                { id: "BM1", name: "烤布蕾奶油塔-5入", price: 480, life: "約20天" },
+                { id: "BM2", name: "烤布蕾奶油塔-8入", price: 750, life: "約20天" },
+                { id: "BM3", name: "烤布蕾千層塔-5入", price: 450, life: "約20天" },
+                { id: "BM4", name: "烤布蕾千層塔-10入", price: 850, life: "約20天" },
+                { id: "BM5", name: "烤布蕾費南雪-5入", price: 450, life: "約20天" },
+                { id: "BM6", name: "綜合禮盒-15入（奶油塔x5｜千層派x6｜費南雪x4）", price: 1250, life: "約20天" }
+            ]},
+            { brand: "小倉山莊", image: "https://github.com/manmangoshop/photo/blob/main/ogurasansou.png?raw=true", items: [
                 { id: "OS4", name: "山春秋-10入經濟包", price: 480, life: "約60天" },
                 { id: "OS5", name: "山春秋-20入經濟包", price: 820, life: "約60天" },
                 { id: "OS1", name: "山春秋-8入紙盒", price: 560, life: "約60天" },
                 { id: "OS2", name: "山春秋-12入鐵盒", price: 900, life: "約60天" },
                 { id: "OS3", name: "山春秋-16入鐵盒", price: 1100, life: "約60天" }
             ]},
-            { brand: "NY Perfect Cheese", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/NY%20Perfect%20Cheese.png?raw=true", items: [
+            { brand: "NY Perfect Cheese", image: "https://github.com/manmangoshop/photo/blob/main/NYPerfectCheese.png?raw=true", items: [
                 { id: "NYPC1", name: "起司奶油捲餅-8入", price: 490, life: "約60天" },
                 { id: "NYPC2", name: "起司奶油捲餅-12入", price: 700, life: "約60天" }
             ]},
-            { brand: "N.Y.C. SAND", image: " https://github.com/kg33813-tech/my-shop-assets/blob/main/NYCSAND.png?raw=true", items: [
-                { id: "NYCS1", name: "原味焦糖巧克力夾心-4入", price: 350, life: "約7天" },
-                { id: "NYCS2", name: "原味焦糖巧克力夾心-8入", price: 620, life: "約7天" },
-                { id: "NYCS3", name: "原味焦糖巧克力夾心-12入", price: 880, life: "約7天" }
-            ]},
-            { brand: "Yoku Moku", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/Yoku%20Moku.png?raw=true", items: [
+            { brand: "Yoku Moku", image: "https://github.com/manmangoshop/photo/blob/main/YokuMoku.png?raw=true", items: [
                 { id: "YM1", name: "雪茄蛋捲-14入", price: 520, life: "約30天" },
                 { id: "YM2", name: "雪茄蛋捲-20入", price: 820, life: "約30天" },
                 { id: "YM3", name: "雪茄蛋捲-30入", price: 1180, life: "約30天" },
                 { id: "YM4", name: "臻饌濃巧禮盒-25入", price: 980, life: "約30天" },
                 { id: "YM6", name: "喜饌濃巧禮盒-40入", price: 1450, life: "約30天" }
             ]},
-            { brand: "Fondan", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/fondan.png?raw=true", items: [
+            { brand: "Fondan", image: "https://github.com/manmangoshop/photo/blob/main/fondan.png?raw=true", items: [
                 { id: "FD1", name: "焦糖流心餅乾-5入", price: 580, life: "約7天" },
                 { id: "FD2", name: "焦糖流心餅乾-10入", price: 980, life: "約7天" }
             ]},
-            { brand: "鎌倉五郎", image: " https://github.com/kg33813-tech/my-shop-assets/blob/main/kamakuragoro.png?raw=true", items: [
+            { brand: "鎌倉五郎", image: "https://github.com/manmangoshop/photo/blob/main/kamakuragoro.png?raw=true", items: [
                 { id: "KG1", name: "鎌倉半月（抹茶x3｜小倉x3）-5入", price: 320, life: "約14天" },
                 { id: "KG2", name: "鎌倉半月（抹茶x5｜小倉x5）-10入", price: 600, life: "約14天" },
                 { id: "KG3", name: "鎌倉半月（櫻茶限定版）-5入", price: 320, life: "約14天" },
                 { id: "KG4", name: "鎌倉半月（櫻茶限定版）-10入", price: 600, life: "約14天" }
             ]},
-            { brand: "Sugar Butter Tree", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/Sugar%20Butter%20Tree.png?raw=true", items: [
+            { brand: "Sugar Butter Tree", image: "https://github.com/manmangoshop/photo/blob/main/SugarButterTree.png?raw=true", items: [
                 { id: "SBT1", name: "招牌奶油夾心餅-7入", price: 280, life: "約50天" },
                 { id: "SBT2", name: "招牌奶油夾心餅-14入", price: 520, life: "約50天" },
                 { id: "SBT3", name: "招牌奶油夾心餅-21入", price: 750, life: "約50天" },
@@ -375,59 +403,51 @@
                 { id: "SBT12", name: "草莓夾心餅乾-5入", price: 350, life: "約50天" },
                 { id: "SBT13", name: "草莓夾心餅乾-8入", price: 550, life: "約50天" }
             ]},
-            { brand: "Henri Charpentier", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/Henri%20Charpentier.png?raw=true", items: [
+            { brand: "Henri Charpentier", image: "https://github.com/manmangoshop/photo/blob/main/HenriCharpentier.png?raw=true", items: [
                 { id: "HC1", name: "費南雪-5入", price: 380, life: "約30天" },
                 { id: "HC2", name: "費南雪-8入", price: 550, life: "約30天" },
                 { id: "HC4", name: "綜合禮盒-8入（費南雪x4|瑪德蓮x4）", price: 550, life: "約30天" },
                 { id: "HC5", name: "綜合禮盒-12入（費南雪x6|瑪德蓮x6）", price: 820, life: "約30天" }
             ]},
-            { brand: "Pista & Tokyo", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/Pista%20&%20Tokyo.png?raw=true", items: [
+            { brand: "Pista & Tokyo", image: "https://github.com/manmangoshop/photo/blob/main/PistaTokyo.png?raw=true", items: [
                 { id: "PT1", name: "開心果夾心餅-5入", price: 490, life: "約60天" },
                 { id: "PT2", name: "開心果覆盆子夾心餅-5入", price: 490, life: "約60天" },
                 { id: "PT3", name: "開心果夾心餅-綜合10入", price: 880, life: "約60天" },
                 { id: "PT4", name: "開心果夾心餅-綜合14入", price: 1180, life: "約60天" }
             ]},
-            { brand: "蝦仙貝之里", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/ebisato1.png?raw=true", items: [
+            { brand: "蝦仙貝之里", image: "https://github.com/manmangoshop/photo/blob/main/ebisato.png?raw=true", items: [
                 { id: "ES1", name: "名古屋綜合蝦餅-280g", price: 370, life: "約90天" }
             ]},
-            { brand: "Tokyo Campanella", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/Tokyo%20Campanella1.png?raw=true", items: [
+            { brand: "Tokyo Campanella", image: "https://github.com/manmangoshop/photo/blob/main/TokyoCampanella.png?raw=true", items: [
                 { id: "TC2", name: "巧克力夾心餅乾-10入", price: 720, life: "約30天" }
             ]},
-            { brand: "Brulee Merize", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/BruleeMerize.png?raw=true", items: [
-                { id: "BM1", name: "烤布蕾奶油塔-5入", price: 480, life: "約20天" },
-                { id: "BM2", name: "烤布蕾奶油塔-8入", price: 750, life: "約20天" },
-                { id: "BM3", name: "烤布蕾千層塔-5入", price: 450, life: "約20天" },
-                { id: "BM4", name: "烤布蕾千層塔-10入", price: 850, life: "約20天" },
-                { id: "BM5", name: "烤布蕾費南雪-5入", price: 450, life: "約20天" },
-                { id: "BM6", name: "綜合禮盒-15入（奶油塔x5｜千層派x6｜費南雪x4）", price: 1250, life: "約20天" }
-            ]},
-            { brand: "本高砂屋", image: " https://github.com/kg33813-tech/my-shop-assets/blob/main/Hontaka.png?raw=true", items: [
+            { brand: "本高砂屋", image: "https://github.com/manmangoshop/photo/blob/main/Hontaka.png?raw=true", items: [
                 { id: "HT1", name: "法式薄酥餅-18枚", price: 290, life: "約100天" },
                 { id: "HT2", name: "法式薄酥餅-36枚", price: 480, life: "約100天" },
                 { id: "HT3", name: "法式薄酥餅-56枚", price: 680, life: "約100天" },
                 { id: "HT4", name: "綜合禮盒-28枚", price: 680, life: "約100天" },
                 { id: "HT5", name: "綜合禮盒-38枚", price: 850, life: "約100天" }
             ]},
-            { brand: "Tulip Rose", image: " https://github.com/kg33813-tech/my-shop-assets/blob/main/TulipRose.png?raw=true", items: [
+            { brand: "Tulip Rose", image: "https://github.com/manmangoshop/photo/blob/main/TulipRose.png?raw=true", items: [
                 { id: "TP1", name: "鬱金香玫瑰餅乾-4入（奶油x2｜起司x2）", price: 380, life: "約7天" },
                 { id: "TP2", name: "鬱金香玫瑰餅乾-6入（奶油x3｜起司x3）", price: 520, life: "約7天" },
                 { id: "TP3", name: "鬱金香玫瑰餅乾-6入（草莓奶油）", price: 580, life: "約7天" },
                 { id: "TP4", name: "鬱金香玫瑰餅乾-9入（奶油x3｜起司x3|草莓奶油x3）", price: 780, life: "約7天" },
                 { id: "TP5", name: "綜合禮盒-18入", price: 1280, life: "約7天" }
             ]},
-            { brand: "GALETTE au BEURRE", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/GALETTEauBEURRE.png?raw=true", items: [
+            { brand: "GALETTE au BEURRE", image: "https://github.com/manmangoshop/photo/blob/main/GALETTEauBEURRE.png?raw=true", items: [
                 { id: "MZ6", name: "白色鐵盒-6入（經典奶油厚燒酥餅）", price: 550, life: "約14天" },
                 { id: "MZ7", name: "紅色鐵盒-18入（香草｜可可｜抹茶｜起司）", price: 550, life: "約14天" },
                 { id: "MZ8", name: "鐵灰禮盒-23入（香草｜可可｜抹茶｜起司｜布列塔尼酥餅）", price: 780, life: "約14天" }
             ]},
-            { brand: "Feuillage", image: " https://github.com/kg33813-tech/my-shop-assets/blob/main/Morozoff.png?raw=true", items: [
+            { brand: "Feuillage", image: "https://github.com/manmangoshop/photo/blob/main/Feuillage.png?raw=true", items: [
                 { id: "MZ1", name: "綜合葉子夾心餅乾-6入", price: 300, life: "約180天" },
                 { id: "MZ2", name: "綜合葉子夾心餅乾-9入", price: 400, life: "約180天" },
                 { id: "MZ3", name: "綜合葉子夾心餅乾-12入", price: 520, life: "約180天" },                
                 { id: "MZ4", name: "綜合葉子夾心餅乾-16入", price: 750, life: "約180天" },                
                 { id: "MZ5", name: "綜合葉子夾心餅乾-20入", price: 950, life: "約180天" }               
             ]},
-            { brand: "源吉兆庵", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/kitchoan3.png?raw=true", items: [
+            { brand: "源吉兆庵", image: "https://github.com/manmangoshop/photo/blob/main/kitchoan.png?raw=true", items: [
                 { id: "KO1", name: "奶油夾心煎餅-原味6入", price: 480, life: "約40天" },
                 { id: "KO3", name: "奶油夾心煎餅-抹茶6入", price: 480, life: "約40天" },
                 { id: "KO2", name: "奶油夾心煎餅-原味12入", price: 920, life: "約40天" },
@@ -436,7 +456,7 @@
                 { id: "KO7", name: "織部錦-8入", price: 700, life: "約14天" },
                 { id: "KO8", name: "織部錦-12入", price: 1080, life: "約14天" }
             ]},
-            { brand: "Now on Cheese", image: " https://github.com/kg33813-tech/my-shop-assets/blob/main/nowoncheese.png?raw=true", items: [
+            { brand: "Now on Cheese", image: "https://github.com/manmangoshop/photo/blob/main/nowoncheese.png?raw=true", items: [
                 { id: "NOC1", name: "煙燻起司夾心餅乾-10入", price: 520, life: "約120天" },
                 { id: "NOC2", name: "煙燻起司夾心餅乾-18入", price: 920, life: "約120天" },
                 { id: "NOC3", name: "焦糖夾心餅乾-10入", price: 520, life: "約120天" },
@@ -450,7 +470,7 @@
             ]},
             {   
                 brand: "Tokyo Rich Cheese", 
-                image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/Tokyo%20Rich%20Cheese.png?raw=true",
+                image: "https://github.com/manmangoshop/photo/blob/main/TokyoRichCheese.png?raw=true",
                 items: [
                     { id: "BN2", name: "起司蛋糕條-10入", price: 590, life: "約30天" },
                     { id: "BN3", name: "起司蛋糕條（抹茶）-6入", price: 420, life: "約30天" },
@@ -459,7 +479,7 @@
             },
             { 
                 brand: "神戶風月堂", 
-                image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/fugetsudo1.png?raw=true",
+                image: "https://github.com/manmangoshop/photo/blob/main/fugetsudo.png?raw=true",
                 items: [
                     { id: "KF1", name: "法蘭酥-6入（香草、草莓、可可）", price: 380, life: "約60天" },
                     { id: "KF2", name: "法蘭酥-8入（香草、草莓、可可）", price: 480, life: "約60天" },
@@ -469,7 +489,7 @@
                     { id: "KF6", name: "法蘭酥-12入（紅茶、抹茶、咖啡）", price: 700, life: "約60天" }
                 ]
             },
-            { brand: "茅乃舍", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/kubara1.png?raw=true", items: [
+            { brand: "茅乃舍", image: "https://github.com/manmangoshop/photo/blob/main/kubara.png?raw=true", items: [
                 { id: "KB1", name: "柴魚昆布高湯-5入", price: 160, life: "約180天" },
                 { id: "KB2", name: "柴魚昆布高湯-12入", price: 380, life: "約180天" },
                 { id: "KB4", name: "柴魚昆布高湯（減鹽）-5入", price: 180, life: "約180天" },
@@ -484,7 +504,7 @@
                 { id: "KB17", name: "玉子燒-4入", price: 230, life: "約180天" },
                 { id: "KB16", name: "茶碗蒸-4入", price: 280, life: "約180天" }
             ]}, 
-            { brand: "主廚市集", image: "https://github.com/kg33813-tech/my-shop-assets/blob/main/chefsmart1.png?raw=true", items: [
+            { brand: "主廚市集", image: "https://github.com/manmangoshop/photo/blob/main/chefsmart.png?raw=true", items: [
                 { id: "cs1", name: "烏魚子禮盒240g", price: 1280, life: "約1年" },
                 { id: "cs2", name: "松葉蟹禮盒750g", price: 1880, life: "約2年" }
             ]}
@@ -812,7 +832,7 @@
                         <ul class="text-[11px] text-blue-700 font-medium space-y-2 list-disc pl-4 leading-relaxed">
                             <li>訂單確認郵件已寄至：${data.email}</li>
                             <li>請於三日內完成付款，逾期名額自動釋出</li>
-                            <li>完成後請務必【截圖本頁】傳至 LINE 客服對帳</li>
+                            <li>完成後請務必聯絡LINN客戶確定訂單 </li>
                         </ul>
                     </div>
                     <div class="text-center space-y-4">
